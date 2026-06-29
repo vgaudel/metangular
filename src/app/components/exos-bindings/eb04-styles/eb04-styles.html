@@ -1,0 +1,15 @@
+<h3>EB04 — Style binding</h3>
+
+<p [style.font-size.px]="taille" [style.color]="couleur">
+    Texte de demonstration ({{ taille }}px / {{ couleur }})
+</p>
+
+<label>
+    Taille :
+    <input type="range" min="10" max="60" [value]="taille" (input)="onTaille($event)">
+</label>
+
+<label>
+    Couleur :
+    <input type="color" [value]="couleur" (input)="onCouleur($event)">
+</label>

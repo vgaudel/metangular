@@ -1,0 +1,19 @@
+<h3>EB07 — &#64;if / &#64;else if / &#64;else</h3>
+
+<label>
+    Temperature :
+    <input type="number" [(ngModel)]="temperature" name="temperature">
+    °C
+</label>
+
+@if (temperature < 0) {
+    <p class="gel">Il gele !</p>
+} @else if (temperature < 15) {
+    <p class="frais">Il fait frais.</p>
+} @else if (temperature < 26) {
+    <p class="agreable">Temperature agreable.</p>
+} @else if (temperature < 35) {
+    <p class="chaud">Il fait chaud.</p>
+} @else {
+    <p class="canicule">Canicule !</p>
+}

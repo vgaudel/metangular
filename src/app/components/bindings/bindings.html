@@ -1,0 +1,66 @@
+<h2>{{title}}</h2>
+
+
+<div>
+    <h3>1. Interpolation</h3>
+    <p> Bonjour {{user.firstname}} {{user.lastName}} !</p>
+    <p>2 + 3 = {{2+3}}</p>
+</div>
+
+<div>
+    <h3>2. Property Binding</h3>
+    <img [src]="imageUrl" width="40px" alt="logo"/>
+    <button [disabled]="isButtonDisabled">Bouton</button>
+</div>
+
+<div>
+    <h3>3. Attribute binding</h3>
+    <table border="1">
+        <tr>
+            <td [attr.colspan]="colspanValue">
+                Cellule fusionnée sur {{colspanValue}} colonnes
+            </td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 4. Class binding : [class.xxx]="booléen" -->
+<div>
+  <h3>4. Class binding</h3>
+  <p [class.active]="isActive">Ce texte est actif : {{ isActive }}</p>
+</div>
+
+<!-- 5. Style binding : [style.xxx]="valeur" -->
+<div>
+  <h3>5. Style binding</h3>
+  <p [style.color]="textColor" [style.font-size.px]="fontSize">
+    Texte stylé dynamiquement
+  </p>
+</div>
+
+<!-- 6. Event binding : (evènement)="méthode()" -->
+ <div>
+    <h3>6. Event binding</h3>
+    <button (click)="incrementCounter()">Cliquez-moi</button>
+    <button (click)="toggleButton()">Activer/désactiver le bouton ci-dessus</button>
+    <p>Nombre de clics : {{clickCount}}</p>
+ </div>
+
+ <!-- 7. Two-waybinding :  -->
+
+ <div>
+    <h3>7. Two-way binding</h3>
+    <input type="text" [(ngModel)]="username" placeholder="Votre nom" >
+    <p>Vous avez saisi: {{username}}</p>
+ </div>
+
+ <!-- Bonus : two-way "manuel" (property + event binding combinés) -->
+<div>
+  <h3>Bonus : two-way manuel</h3>
+  <input [value]="username" (keyup)="onKeyUp($any($event.target).value)" placeholder="Votre nom" />
+  <p>Synchronisé : {{ username }}</p>
+</div>

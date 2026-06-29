@@ -1,0 +1,11 @@
+<h3>EB05 — Event binding</h3>
+
+<p>Compteur : {{ compteur }}</p>
+<button (click)="incrementer()">Incrementer</button>
+<button (click)="reset()">Reset</button>
+
+<div class="zone" (mousemove)="onMove($event)">
+    Survolez cette zone.
+    <br>
+    Position : x = {{ dernierePosition.x }} — y = {{ dernierePosition.y }}
+</div>

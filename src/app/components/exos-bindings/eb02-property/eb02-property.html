@@ -1,0 +1,12 @@
+<h3>EB02 — Property binding</h3>
+
+<img [src]="imageUrl" [alt]="'Image aleatoire'" width="200">
+
+<p>
+    <a [href]="lien" target="_blank">Visiter Angular.dev</a>
+</p>
+
+<button [disabled]="desactive">Bouton (peut etre desactive)</button>
+<button (click)="toggle()">
+    {{ desactive ? 'Activer' : 'Desactiver' }} le bouton ci-dessus
+</button>

@@ -1,0 +1,21 @@
+<h3>EB08 — &#64;for + track + &#64;empty</h3>
+
+<input type="text"
+       placeholder="Nouvelle tache"
+       [(ngModel)]="nouvelle"
+       name="nouvelle"
+       (keyup.enter)="ajouter()">
+<button (click)="ajouter()">Ajouter</button>
+
+<ul>
+    @for (t of taches ; track t.id ; let i = $index, e = $even) {
+        <li [class.pair]="e">
+            {{ i + 1 }}. {{ t.libelle }}
+            <button (click)="supprimer(t.id)">x</button>
+        </li>
+    } @empty {
+        <li class="vide">Aucune tache.</li>
+    }
+</ul>
+
+<p>Total : {{ taches.length }} tache(s).</p>

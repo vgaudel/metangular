@@ -1,0 +1,8 @@
+<h3>EB03 — Class binding</h3>
+
+<div class="boite" [class.actif]="actif" [class]="theme">
+    <p>Boite — actif : {{ actif }} — theme : {{ theme }}</p>
+</div>
+
+<button (click)="toggleActif()">Toggle actif</button>
+<button (click)="inverserTheme()">Inverser le theme</button>

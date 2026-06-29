@@ -1,0 +1,85 @@
+<h2>Démonstration du Control Flow Angular</h2>
+
+<!-- 1. @if / @else if / @else -->
+
+<div>
+    <h3>1. &#64;if</h3>
+    <button (click)="toggleLogin()">Basculer la connexion</button>
+    @if (isLoggedIn) {
+    <p> Vous êtes connecté.</p>
+    } @else {
+    <p>Vous n'êtes pas connecté</p>
+    }
+
+    @if (isLoggedIn) {
+    <p>Rôle de l'utilisateur :</p>
+    @if (userRole === 'admin') {
+    <p>👑 Administrateur</p>
+    } @else if (userRole === 'editor') {
+    <p>✏️ Éditeur</p>
+    } @else {
+    <p>👤 Invité</p>
+    }
+    }
+</div>
+
+<!-- 2. @for -->
+
+<div>
+    <h3>2. &#64;for avec track et &#64;empty</h3>
+    <p>Liste de fruits :</p>
+    <ul>
+        @for (fruitItem of fruits; track fruitItem){
+        <li>{{fruitItem}}</li>
+        }
+    </ul>
+
+    <p>Liste d'utilisateurs (avec index) :</p>
+    <ul>
+        @for (userItem of users; track $index) {
+        <li>
+            {{$index + 1}}. {{userItem.name}}
+        </li>
+        }
+    </ul>
+
+    <p>Liste vide (avec &#64;empty) :</p>
+    <ul>
+        @for (item of emptyList; track item) {
+        <li>{{ item }}</li>
+        } @empty {
+        <li>Aucun élément à afficher.</li>
+        }
+    </ul>
+
+</div>
+<!-- 3. @switch / @case / @default -->
+<div>
+    <h3>3. &#64;switch / &#64;case / &#64;default</h3>
+    <button (click)="changeStatus('loading')">Loading</button>
+    <button (click)="changeStatus('success')">Success</button>
+    <button (click)="changeStatus('error')">Error</button>
+
+    @switch (status) {
+        @case ('loading'){
+            <p>Chargement en cours ...</p>
+        }
+        @case ('success'){
+            <p>Opération réussie !</p>
+        }
+        @case ('error'){
+            <p>Une erreur est survenue.</p>
+        }
+        @default {
+            <p>État inconnu.</p>
+        }
+    }
+</div>
+
+<!-- 4. @let : variables locales dans le template -->
+<div>
+  <h3>4. &#64;let (variable locale de template)</h3>
+  @let fullName = firstName + ' ' + lastName;
+  <p>Nom complet : {{ fullName }}</p>
+  <p>En majuscules : {{ fullName.toUpperCase() }}</p>
+</div>

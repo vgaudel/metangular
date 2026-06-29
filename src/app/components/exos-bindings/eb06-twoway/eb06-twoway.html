@@ -1,0 +1,27 @@
+<h3>EB06 — Two-way binding avec [(ngModel)]</h3>
+
+<label>
+    Nom :
+    <input type="text" [(ngModel)]="nom" name="nom">
+</label>
+
+<label>
+    Age :
+    <input type="number" [(ngModel)]="age" name="age">
+</label>
+
+<label>
+    <input type="checkbox" [(ngModel)]="accepte" name="accepte">
+    J'accepte les conditions
+</label>
+
+<hr>
+
+<p>
+    Recap :
+    <strong>{{ nom || '(vide)' }}</strong>,
+    {{ age }} ans,
+    accepte : {{ accepte ? 'oui' : 'non' }}
+</p>
+
+<button (click)="reset()">Reset</button>
