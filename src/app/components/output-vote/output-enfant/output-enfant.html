@@ -1,0 +1,15 @@
+<!--
+  COMPOSANT ENFANT
+  ================
+  Ce composant ne connaît PAS le parent.
+  Il se contente d'émettre un événement quand l'utilisateur clique.
+  C'est le parent qui décide quoi faire de cet événement.
+-->
+
+
+<div>
+    <h4 class="text-xl">Votez !</h4>
+    <button (click)="voter('pour')">Pour</button>
+    <button (click)="voter('contre')">Contre</button>
+    <button (click)="voter('abstention')">Abstention</button>
+</div>

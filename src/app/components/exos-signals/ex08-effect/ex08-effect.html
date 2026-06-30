@@ -1,0 +1,12 @@
+<h3>✏️ Ex08 — Effect : historique des valeurs</h3>
+
+<input [(ngModel)]="mot" placeholder="Saisir un mot...">
+<input [(ngModel)]="mot2" placeholder="Saisir un mot...">
+<p>Valeur actuelle : <strong>{{ mot() }}</strong></p>
+<p>Valeur actuelle : <strong>{{ mot2() }}</strong></p>
+<p>Historique :</p>
+<ul>
+  @for (h of historique; track $index) {
+    <li>{{ h }}</li>
+  }
+</ul>

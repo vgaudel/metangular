@@ -1,0 +1,10 @@
+<h3>EI08 - input() + output() : champ de formulaire reutilisable</h3>
+
+<app-ei08-enfant libelle="Prenom" placeholder="Votre prenom" (valide)="prenom.set($event)" />
+<app-ei08-enfant libelle="Ville" placeholder="Votre ville" (valide)="ville.set($event)" />
+<app-ei08-enfant libelle="Metier" placeholder="Votre metier" (valide)="metier.set($event)" />
+
+<hr>
+<p>Prenom : <strong>{{ prenom() || '—' }}</strong></p>
+<p>Ville  : <strong>{{ ville() || '—' }}</strong></p>
+<p>Metier : <strong>{{ metier() || '—' }}</strong></p>

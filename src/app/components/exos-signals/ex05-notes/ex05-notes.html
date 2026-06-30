@@ -1,0 +1,19 @@
+<h3>✏️ Ex05 — Moyenne scolaire</h3>
+
+<div class="notes">
+  <label>
+    Math :
+    <input type="number" [(ngModel)]="noteMath"  min="0" max="20">
+  </label>
+  <label>
+    Français :
+    <input type="number" [(ngModel)]="noteFrancais" min="0" max="20">
+  </label>
+  <label>
+    Histoire :
+    <input type="number" [(ngModel)]="noteHistoire" min="0" max="20">
+  </label>
+</div>
+
+<p>Moyenne : <strong>{{ moyenne() | number:'1.1-2' }} / 20</strong></p>
+<p>Mention : <strong>{{ mention() }}</strong></p>

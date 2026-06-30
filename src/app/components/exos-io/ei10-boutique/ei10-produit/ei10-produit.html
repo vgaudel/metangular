@@ -1,0 +1,8 @@
+<div class="carte-produit">
+  <b>{{ produit().nom }}</b>
+  <p>{{ produit().prix | currency:'EUR' }}</p>
+  <p>Stock : {{ produit().stock }}</p>
+  <button [disabled]="produit().stock === 0" (click)="ajouteAuPanier.emit(produit())">
+    {{ produit().stock === 0 ? 'Rupture' : 'Ajouter' }}
+  </button>
+</div>

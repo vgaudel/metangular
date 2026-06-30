@@ -1,0 +1,39 @@
+.filtres { margin-bottom: 1rem; }
+.filtres button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #888;
+  background: #fff;
+  cursor: pointer;
+}
+.filtres button.actif {
+  background: #2a6cff;
+  color: #fff;
+  border-color: #2a6cff;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.carte {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.8rem;
+  background: #fafafa;
+}
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.8rem;
+}
+.badge.fruit   { background: #2a8a3a; }
+.badge.legume  { background: #d9822b; }
+.badge.boisson { background: #2a6cff; }
+
+.rupture { color: #d6232b; font-weight: bold; }
+.recap   { margin-top: 1rem; font-style: italic; }

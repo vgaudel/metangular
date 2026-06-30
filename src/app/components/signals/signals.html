@@ -1,0 +1,48 @@
+<p>signals works!</p>
+
+<label >Count1: {{count1}}  </label>
+<br>
+<label >Count2: {{count2()}}  </label>
+<hr>
+
+
+
+<label >prixHT: {{prixHT()}}  </label>
+<br>
+<label >tva: {{tva()}}  </label>
+<br>
+<label >prixTTC: {{prixTTC()}}  </label>
+
+
+<hr>
+<h3>.update() : modifier à partir de la valeur précédente</h3>
+<label>Compteur: {{compteur()}}</label><br>
+<button (click)="decrementer()">-</button>
+<button (click)="incrementer()">+</button>
+
+
+
+<hr>
+<h3>Signal de type tableau (mise à jour immuable)</h3>
+<ul>
+  @for (fruit of paniers(); track fruit) {
+    <li>{{fruit}}</li>
+  }
+</ul>
+<button (click)="ajouterFruit('Orange')">Ajouter Orange</button>
+
+
+<hr>
+<h3>untracked() : suivre un signal, en lire un autre sans s'y abonner</h3>
+<label>Score: {{score()}}</label><br>
+<label>Niveau: {{niveau()}}</label><br>
+<button (click)="gagnerPoints()">Gagner 10 pts</button>
+<button (click)="monterNiveau()">Monter niveau</button>
+<p><em>Ouvre la console : "Gagner 10 pts" écrit un log, "Monter niveau" n'en écrit pas.</em></p>
+
+<hr>
+<h3>linkedSignal() : dérivé mais modifiable</h3>
+<label>Choix actuel: {{choix()}}</label><br>
+@for (option of options(); track option) {
+  <button (click)="changerChoix(option)">{{option}}</button>
+}

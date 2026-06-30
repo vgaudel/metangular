@@ -1,0 +1,7 @@
+<h3>EI02 - input.required() avec logique conditionnelle</h3>
+
+@for (e of etudiants; track e.prenom) {
+  <div>
+    <app-ei02-enfant [prenom]="e.prenom" [note]="e.note" />
+  </div>
+}

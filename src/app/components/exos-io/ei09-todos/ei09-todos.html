@@ -1,0 +1,13 @@
+<h3>EI09 - input() + output() : liste avec suppression</h3>
+
+<p>Taches restantes : <strong>{{ taches().length }}</strong></p>
+
+@for (t of taches(); track t) {
+  <div>
+    <app-ei09-tache [tache]="t" (supprime)="onSupprime($event)" />
+  </div>
+}
+
+@if (taches().length === 0) {
+  <p>Toutes les taches sont terminees !</p>
+}

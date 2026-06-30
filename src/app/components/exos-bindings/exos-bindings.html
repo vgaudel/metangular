@@ -1,5 +1,10 @@
 <h2>Exos Bindings</h2>
 
+@if(isIndiceOutOfBounds){
+    <p>Le numéro de l'exercice demandé n'existe pas</p>
+}
+
+
 <select [(ngModel)]="selectedSousComposant">
     @for(comp of sousComposants; track $index){
         <option>{{comp}}</option>
@@ -8,14 +13,15 @@
 
 @switch(selectedSousComposant){
     @case ('eb01-interpolation') {<app-eb01-interpolation/>}
-    @case ('eb02-property') {<app-eb02-property/>}
-    @case ('eb03-classes') {<app-eb03-classes/>}
-    @case ('eb04-styles')        { <app-eb04-styles /> }
-    @case ('eb05-events')        { <app-eb05-events /> }
-    @case ('eb06-twoway')        { <app-eb06-twoway /> }
-    @case ('eb07-if')            { <app-eb07-if /> }
-    @case ('eb08-for')           { <app-eb08-for /> }
-    @case ('eb09-switch')        { <app-eb09-switch /> }
+    @case ('eb02-property')     {<app-eb02-property/>}
+    @case ('eb03-classes')      {<app-eb03-classes/>}
+    @case ('eb04-styles')       { <app-eb04-styles /> }
+    @case ('eb05-events')       { <app-eb05-events /> }
+    @case ('eb06-twoway')       { <app-eb06-twoway /> }
+    @case ('eb07-if')           { <app-eb07-if /> }
+    @case ('eb08-for')          { <app-eb08-for /> }
+    @case ('eb09-switch')       { <app-eb09-switch /> }
+    @case ('eb10-combine')      { <app-eb10-combine />}
     @default {
         <p>Aucun composant sélectionné</p>
     }

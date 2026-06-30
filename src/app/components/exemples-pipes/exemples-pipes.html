@@ -1,0 +1,44 @@
+<h2>Les pipes Angular</h2>
+
+<h3>1. Pipes sur les chaînes</h3>
+<p>Donnée brute : <b>{{nom}}</b></p>
+<table>
+    <tr><td>uppercase</td> <td>{{nom | uppercase}}</td> <td><i>Tout en majuscule</i></td> </tr>
+    <tr><td>lowercase</td> <td>{{nom | lowercase}}</td> <td><i>Tout en minuscule</i></td> </tr>
+    <tr><td>titlecase</td> <td>{{nom | titlecase}}</td> <td><i>Première lettre de chaque mot en majuscule</i></td> </tr>
+    <tr><td>titlecase</td> <td>{{nom | exclamation}}</td> <td><i>Utilisation du pipe personnalisé</i></td> </tr>
+    <tr><td>titlecase</td> <td>{{nom | exclamation:10}}</td> <td><i>Utilisation du pipe personnalisé avec paramètre</i></td> </tr>
+</table>
+
+<h3>2. Pipes sur les nombres</h3>
+<p>Donnée brute : <b>{{prix}}</b> et <b>{{pourcentage}}</b> </p>
+<table>
+    <tr><td>number</td> <td>{{prix | number}}</td> <td><i>Format par défaut</i></td> </tr>
+    <tr><td>number:'1.2-2'</td> <td>{{prix | number:'1.2-2'}}</td> <td><i>1 entier min, 2 décimales min/max</i></td> </tr>
+    <tr><td>currency:'EUR'</td> <td>{{prix | currency:'EUR'}}</td> <td><i>Devise</i></td> </tr>
+    <tr><td>currency:'USD':'symbol':'1.0-0'</td> <td>{{prix | currency:'USD':'symbol':'1.0-0'}}</td> <td><i>Dollar, sans décimale</i></td> </tr>
+    <tr><td>percent</td> <td>{{pourcentage | percent}}</td> <td><i>Pourcentage, sans décimale</i></td> </tr>
+    <tr><td>percent:'1.1-1'</td> <td>{{pourcentage | percent:'1.1-1'}}</td> <td><i>Pourcentage, avec 1 décimale</i></td> </tr>
+</table>
+
+<h3>3. Pipes sur les dates</h3>
+<p>Donnée brute : <b>{{maintenant}}</b></p>
+
+<table>
+    <tr><td>date</td> <td>{{maintenant | date}}</td> <td><i>Format par défaut</i></td> </tr>
+    <tr><td>date:'short'</td> <td>{{maintenant | date:'short'}}</td> <td><i>Format court</i></td> </tr>
+    <tr><td>date:'fullDate'</td> <td>{{maintenant | date:'fullDate'}}</td> <td><i>Format complet</i></td> </tr>
+    <tr><td>date:'dd/MM/yyyy'</td> <td>{{maintenant | date:'dd/MM/yyyy'}}</td> <td><i>Format personnalisé</i></td> </tr>
+    <tr><td>date:'dd MMM yyyy'</td> <td>{{maintenant | date:'dd MMM yyyy'}}</td> <td><i>Format personnalisé</i></td> </tr>
+    <tr><td>date:'dd MMMM yyyy''</td> <td>{{maintenant | date:'dd MMMM yyyy'}}</td> <td><i>Format personnalisé</i></td> </tr>
+    <tr><td>date:'HH:mm:ss''</td> <td>{{maintenant | date:'HH:mm:ss'}}</td> <td><i>Heure uniquement</i></td> </tr>
+    <tr><td>date:'HH:mm:ss''</td> <td>{{hier | timeAgo}}</td> <td><i>Pipeline perso timeAgo</i></td> </tr>
+</table>  
+
+<h3>4. Pipe JSON (pour le debug)</h3>
+<p>Affiche un objet complet de manière lisible au format JSON</p>
+<pre> {{utilisateur | json}}</pre>
+
+<h3>5. Pipe slice (extraire une portion de tableau)</h3>
+<p> Tableau complet : {{utilisateur.prix_nobel}}</p>
+<p>slice:0:1 -> Retourne le premier élément uniquement : <b>{{utilisateur.prix_nobel | slice:0:1}}</b></p>

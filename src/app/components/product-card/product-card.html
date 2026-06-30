@@ -1,0 +1,13 @@
+
+<div class="product-card" [class.rupture]="product().stock === 0">
+  <h3>{{ product().name }}</h3>
+  <p class="description">{{ product().description }}</p>
+  <p class="category">Catégorie : {{ product().category | titlecase }}</p>
+  <p class="price">{{ product().price | currency:'EUR' }}</p>
+
+  @if (product().stock > 0) {
+    <p class="stock">En stock : {{ product().stock }}</p>
+  } @else {
+    <p class="stock rupture-texte">Rupture de stock</p>
+  }
+</div>

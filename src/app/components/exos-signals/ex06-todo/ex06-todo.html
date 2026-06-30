@@ -1,0 +1,11 @@
+<h3>✏️ Ex06 — Liste de tâches</h3>
+
+<input [(ngModel)]="nouvelleTache" placeholder="Nouvelle tâche..." (keyup.enter)="ajouter()">
+<button (click)="ajouter()">Ajouter</button>
+
+<p>Nombre de tâches : <strong>{{ nbTaches() }}</strong></p>
+<ul>
+  @for (t of taches(); track t) {
+    <li>{{ t }}</li>
+  }
+</ul>

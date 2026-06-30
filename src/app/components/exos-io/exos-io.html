@@ -1,0 +1,47 @@
+<h2>Exercices — Input properties et Output events en Angular</h2>
+
+@if(isIndiceOutOfBounds){
+    <p style="color:red;">L'exercice que vous cherchez n'existe pas !</p>
+}
+
+<select [(ngModel)]="selectedComponent">
+    @for(comp of composants ; track comp){
+    <option [ngValue]="comp">{{comp}}</option>
+    }
+</select>
+
+@switch (selectedComponent) {
+    @case ('ei01-carte'){
+    <app-ei01-carte></app-ei01-carte>
+    }
+    @case ('ei02-notes'){
+    <app-ei02-notes></app-ei02-notes>
+    }
+    @case ('ei03-contacts'){
+    <app-ei03-contacts></app-ei03-contacts>
+    }
+    @case ('ei04-cinema'){
+    <app-ei04-cinema></app-ei04-cinema>
+    }
+    @case ('ei05-alertes'){
+    <app-ei05-alertes></app-ei05-alertes>
+    }
+    @case ('ei06-couleur'){
+    <app-ei06-couleur></app-ei06-couleur>
+    }
+    @case ('ei07-reactions'){
+    <app-ei07-reactions></app-ei07-reactions>
+    }
+    @case ('ei08-formulaire'){
+    <app-ei08-formulaire></app-ei08-formulaire>
+    }
+    @case ('ei09-todos'){
+    <app-ei09-todos></app-ei09-todos>
+    }
+    @case ('ei10-boutique'){
+    <app-ei10-boutique></app-ei10-boutique>
+    }
+    @default {
+        <p> Sélectionnez un composant </p>
+    }
+}

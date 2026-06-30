@@ -1,0 +1,10 @@
+<h3>✏️ Ex10 — Filtre de liste</h3>
+
+<input (input)="majRecherche($event)" placeholder="Rechercher un fruit...">
+<p>{{ produitsFiltres().length }} résultat(s)</p>
+
+<ul>
+  @for (p of produitsFiltres(); track p) {
+    <li>{{ p }}</li>
+  }
+</ul>

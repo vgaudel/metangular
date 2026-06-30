@@ -1,0 +1,24 @@
+<h3>Exemple output() Communication Enfant => Parent</h3>
+<!--
+  COMMENT ÇA MARCHE ?
+  ====================
+  1. L'ENFANT déclare un output :   aVote = output<string>();
+  2. L'enfant émet un événement :    this.aVote.emit('pour');
+  3. Le PARENT écoute l'événement :  (aVote)="onVoteRecu($event)"
+  4. $event contient la valeur émise par l'enfant ('pour', 'contre'...)
+
+  C'est l'inverse de @Input :
+    @Input  = Parent → Enfant  (le parent ENVOIE des données)
+    output  = Enfant → Parent  (l'enfant REMONTE un événement)
+-->
+
+<app-output-enfant (aVote)="onVoteRecu($event)" />
+
+ <h4>Résultat des votes (reçus par le parent)</h4>
+
+<table>
+  <tr><td>Pour</td><td><b>{{ pour() }}</b></td></tr>
+  <tr><td>Contre</td><td><b>{{ contre() }}</b></td></tr>
+  <tr><td>Abstention</td><td><b>{{ abstention() }}</b></td></tr>
+  <tr><td><b>Total</b></td><td><b>{{ total() }}</b></td></tr>
+</table>

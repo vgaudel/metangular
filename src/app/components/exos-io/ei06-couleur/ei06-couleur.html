@@ -1,0 +1,9 @@
+<h3>EI06 - output() avec une donnee string</h3>
+
+<app-ei06-enfant (couleurChoisie)="couleur.set($event)" />
+
+<div [style.background-color]="couleur()"
+     [style.color]="'white'"
+     style="width:120px;height:60px;display:flex;align-items:center;justify-content:center;margin-top:8px;border-radius:4px;">
+  {{ couleur() }}
+</div>

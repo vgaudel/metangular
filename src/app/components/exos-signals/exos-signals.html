@@ -1,0 +1,43 @@
+<h2> Exercices — Signals & Computed Signals en Angular </h2>
+
+<select [(ngModel)]="selectedComponent">
+    @for(comp of composants ; track comp){
+    <option [ngValue]="comp">{{comp}}</option>
+    }
+</select>
+
+@switch (selectedComponent) {
+    @case ('ex01-compteur'){
+    <app-ex01-compteur></app-ex01-compteur>
+    }
+    @case ('ex02-signal-texte'){
+    <app-ex02-signal-texte></app-ex02-signal-texte>
+    }
+    @case ('ex03-surface'){
+    <app-ex03-surface></app-ex03-surface>
+    }
+    @case ('ex04-toggle'){
+    <app-ex04-toggle></app-ex04-toggle>
+    }
+    @case ('ex05-notes'){
+    <app-ex05-notes></app-ex05-notes>
+    }
+    @case ('ex06-todo'){
+    <app-ex06-todo></app-ex06-todo>
+    }
+    @case ('ex07-computed-chaine'){
+    <app-ex07-computed-chaine></app-ex07-computed-chaine>
+    }
+    @case ('ex08-effect'){
+    <app-ex08-effect></app-ex08-effect>
+    }
+    @case ('ex09-panier'){
+    <app-ex09-panier></app-ex09-panier>
+    }
+    @case ('ex10-filtre'){
+    <app-ex10-filtre></app-ex10-filtre>
+    }
+     @default {
+        <p> Sélectionnez un composant </p>
+    }
+}

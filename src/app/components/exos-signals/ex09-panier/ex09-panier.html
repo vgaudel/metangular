@@ -1,0 +1,16 @@
+<h3>✏️ Ex09 — Panier minimal</h3>
+
+<label>
+  Prix unitaire (€) :
+  <input type="number" [value]="prixUnitaire()" (input)="prixUnitaire.set(+$any($event.target).value)" min="0" step="0.01">
+</label>
+<label>
+  Quantité :
+  <input type="number" [value]="quantite()" (input)="quantite.set(+$any($event.target).value)" min="0">
+</label>
+
+<table>
+  <tr><td>Sous-total HT</td><td>{{ sousTotal() | currency:'EUR' }}</td></tr>
+  <tr><td>TVA (20%)</td><td>{{ tva() | currency:'EUR' }}</td></tr>
+  <tr><td><strong>Total TTC</strong></td><td><strong>{{ totalTTC() | currency:'EUR' }}</strong></td></tr>
+</table>

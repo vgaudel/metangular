@@ -1,0 +1,5 @@
+<div class="champ">
+  <label>{{ libelle() }}</label><br>
+  <input [placeholder]="placeholder()" (input)="valeur.set($any($event.target).value)">
+  <button (click)="soumettre()">Valider</button>
+</div>

@@ -1,0 +1,11 @@
+<footer [style.background-color]="preferenceService.couleurPreferee">
+
+    <p>&copy; MetAngular</p>
+    <label>Choisir une couleur préférée: </label>&nbsp;
+    <select [(ngModel)]="preferenceService.couleurPreferee">
+        @for(couleur of preferenceService.CSS_COLOR_NAMES | keyvalue; track couleur){
+            <option [value]="couleur.value">{{couleur.key}}</option>
+        }
+    </select>
+    {{preferenceService.couleurPreferee}}
+</footer>

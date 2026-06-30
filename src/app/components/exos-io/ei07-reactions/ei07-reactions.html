@@ -1,0 +1,10 @@
+<h3>EI07 - input() + output() : like/dislike</h3>
+
+@for (a of articles; track a) {
+  <div style="margin: 4px 0;">
+    <app-ei07-enfant [article]="a" (reaction)="onReaction($event)" />
+  </div>
+}
+
+<p>Total likes : <strong>{{ likes() }}</strong></p>
+<p>Total dislikes : <strong>{{ dislikes() }}</strong></p>

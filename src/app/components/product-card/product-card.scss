@@ -1,0 +1,28 @@
+ 
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  h3 {
+    margin: 0 0 0.5rem;
+  }
+  .description {
+    color: #555;
+    font-size: 0.9rem;
+  }
+  .price {
+    font-weight: bold;
+    color: #2a7d2e;
+  }
+  &.rupture {
+    opacity: 0.6;
+  }
+  .rupture-texte {
+    color: #c0392b;
+    font-weight: bold;
+  }
+}
+ 
+ 

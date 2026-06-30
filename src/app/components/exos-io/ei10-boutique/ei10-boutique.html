@@ -1,0 +1,9 @@
+<h3>EI10 - Boutique interactive</h3>
+
+@for (p of produits; track p.nom) {
+  <app-ei10-produit [produit]="p" (ajouteAuPanier)="ajouterAuPanier($event)" />
+}
+
+<hr>
+<p>Panier : <strong>{{ panier().length }}</strong> article(s)</p>
+<p>Total  : <strong>{{ total() | currency:'EUR' }}</strong></p>

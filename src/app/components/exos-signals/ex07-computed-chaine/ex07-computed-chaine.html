@@ -1,0 +1,9 @@
+<h3>✏️ Ex07 — Computed chaîné (température)</h3>
+
+<label>
+  Température (°C) :
+  <input type="number" [value]="celsius()" (input)="celsius.set(+$any($event.target).value)">
+</label>
+
+<p>Fahrenheit : <strong>{{ fahrenheit() | number:'1.1-1' }} °F</strong></p>
+<p>Description : <strong>{{ description() }}</strong></p>
