@@ -2,10 +2,11 @@ import { Component, inject, signal } from '@angular/core';
 import { IProduct } from '../../model/IProduct';
 import { ProductCard } from '../product-card/product-card';
 import { MockProductService } from '../../services/mock-product-service';
+import { ProductCreationForm } from '../product-creation-form/product-creation-form';
 
 @Component({
   selector: 'app-product-list',
-  imports: [ProductCard],
+  imports: [ProductCard, ProductCreationForm],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss',
 })

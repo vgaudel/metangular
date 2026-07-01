@@ -1,0 +1,43 @@
+<h3>Ajouter un produit :</h3>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label>Nom</label>
+        <input type="text" formControlName="name">
+        @if(form.get('name')?.touched){
+            @if(form.get('name')?.hasError('required')){
+             <span>Champs requis</span>
+            }@else if (form.get('name')?.hasError('minlength')) {
+                <span>Minimum 3 caractères</span>
+            }
+        }
+    </div>
+
+    <div>
+        <label>Description</label>
+        <input type="text" formControlName="description">
+    </div>
+
+    <div>
+        <label>Prix</label>
+        <input type="number" formControlName="price">
+    </div>
+
+    <div>
+        <label>Catégorie</label>
+        <input type="text" formControlName="category">
+    </div>
+
+    <div>
+        <label>Stock</label>
+        <input type="number" formControlName="stock">
+    </div>
+
+    <div>
+        <button type="submit" [disabled]="form.invalid">Enregistrer</button>
+
+    </div>
+
+</form>

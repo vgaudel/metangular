@@ -1,4 +1,4 @@
-<footer [style.background-color]="preferenceService.couleurPreferee">
+<footer [style.background-color]="preferenceService.couleurPreferee()">
 
     <p>&copy; MetAngular</p>
     <label>Choisir une couleur préférée: </label>&nbsp;
@@ -7,5 +7,5 @@
             <option [value]="couleur.value">{{couleur.key}}</option>
         }
     </select>
-    {{preferenceService.couleurPreferee}}
+    {{preferenceService.couleurPreferee()}}
 </footer>
