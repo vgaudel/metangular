@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MockProductService } from '../../services/mock-product-service';
 
 @Component({
   selector: 'app-product-creation-form',
@@ -8,6 +9,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './product-creation-form.scss',
 })
 export class ProductCreationForm {
+
+    private _productService = inject(MockProductService);
 
      // ────────────────────────────────────────────────────────────────────────────
   // FormGroup : regroupe plusieurs FormControl sous un objet unique.
@@ -30,15 +33,17 @@ export class ProductCreationForm {
 form = new FormGroup(
   {
     // Pour notre utilisateur, on veut pouvoir saisir 5 attributs
-    name : new FormControl('',[Validators.required,Validators.minLength(2)]),
-    description : new FormControl('',[Validators.required]),
-    price : new FormControl('',[Validators.required, Validators.min(0.01)]),
-    category : new FormControl('',[Validators.required]),
-    stock : new FormControl('',[Validators.required, Validators.min(0)]),
+    name : new FormControl('', { nonNullable: true, validators: [Validators.required,Validators.minLength(5)]}),
+    description : new FormControl('', { nonNullable: true, validators: [Validators.required]}),
+    price : new FormControl(0, { nonNullable: true, validators: [Validators.required, Validators.min(0.01)]}),
+    category : new FormControl('', { nonNullable: true, validators: [Validators.required]}),
+    stock : new FormControl(0, { nonNullable: true, validators: [Validators.required, Validators.min(0)]}),
   }
-)
+);
   onSubmit(){
-    console.log(this.form.value);
+    this._productService.createProduct(this.form.getRawValue());
+    //console.log(this.form.getRawValue());
     
+    this.form.reset();
   }
 }

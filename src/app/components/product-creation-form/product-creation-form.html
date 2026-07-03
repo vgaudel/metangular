@@ -2,15 +2,22 @@
 
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-
+    @let nameFC = form.get('name');
+    @let descriptionFC = form.get('description');
+    @let priceFC = form.get('price');
+    @let categoryFC = form.get('category');
+    @let stockFC = form.get('stock');
     <div>
         <label>Nom</label>
-        <input type="text" formControlName="name">
-        @if(form.get('name')?.touched){
-            @if(form.get('name')?.hasError('required')){
+        <input [class.valid]="nameFC?.valid" type="text" formControlName="name">
+        @if(nameFC?.touched){
+            @if(nameFC?.hasError('required')){
              <span>Champs requis</span>
-            }@else if (form.get('name')?.hasError('minlength')) {
-                <span>Minimum 3 caractères</span>
+            }@else if (nameFC?.hasError('minlength')) {
+                <span class="erreur"><br>
+                    Minimum {{nameFC?.errors?.['minlength'].requiredLength}} caractères <br>
+                    Actuellement {{nameFC?.errors?.['minlength'].actualLength}} caractères
+                 </span>
             }
         }
     </div>

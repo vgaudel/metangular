@@ -1,11 +1,19 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PreferenceService {
 
-  couleurPreferee = signal('#000000');
+  couleurPreferee = signal('');
+
+  constructor(){
+    effect(()=> localStorage.
+          setItem("preference.couleurPreferee",
+            this.couleurPreferee()));
+    let c = localStorage.getItem("preference.couleurPreferee");
+    this.couleurPreferee.set(c??'#000000');
+  }
 
   CSS_COLOR_NAMES = {
     AliceBlue: '#F0F8FF',
